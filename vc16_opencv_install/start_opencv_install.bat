@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy ByPass -File .\install_vc16_opencv.ps1
