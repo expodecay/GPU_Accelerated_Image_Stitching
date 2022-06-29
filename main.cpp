@@ -21,6 +21,9 @@
 #include "opencv2/xfeatures2d.hpp"
 #include "opencv2/xfeatures2d/nonfree.hpp"
 #endif
+
+#include "MyBlend.h"
+
 #define ENABLE_LOG 1
 #define LOG(msg) std::cout << msg
 #define LOGLN(msg) std::cout << msg << std::endl
@@ -988,6 +991,7 @@ Mat image_stitch(Mat img_0, Mat img_1) {
             cout << "######Try_CUDA\n";
             cout << "blender = Blender::createDefault(blend_type, try_cuda);\n";
             blender = Blender::createDefault(blend_type, try_cuda);
+            //blender = cv::makePtr<MyBlend>(try_cuda);
             Size dst_sz = resultRoi(corners, sizes).size();
             float blend_width = sqrt(static_cast<float>(dst_sz.area())) * blend_strength / 100.f;
             if (blend_width < 1.0f)
