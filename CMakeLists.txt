@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.20)
 
 project(image_stitching)
 
@@ -9,7 +9,7 @@ find_package(OpenCV REQUIRED PATHS "C:/opencvBuild/build/install")
 include_directories(${OpenCV_INCLUDE_DIRF})
 
 add_executable(image_stitching
-main.cpp
+main.cpp MyBlend.cpp
 )
 
 target_link_libraries(image_stitching ${OpenCV_LIBS})
