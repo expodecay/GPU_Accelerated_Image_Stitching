@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <thread>
 #include "opencv2/opencv_modules.hpp"
 #include <opencv2/core/utility.hpp>
 #include "opencv2/imgcodecs.hpp"
@@ -27,6 +28,12 @@
 using namespace std;
 using namespace cv;
 using namespace cv::detail;
+
+void create_masks_thread(std::vector<UMat>* masks, std::vector<Mat>* images, int i)
+{
+    (*masks)[i].create((*images)[i].size(), CV_8U);
+    (*masks)[i].setTo(Scalar::all(255));
+}
 
 static void printUsage(char** argv)
 {
@@ -385,7 +392,7 @@ static int parseCmdArgs(int argc, char** argv)
 
 Mat image_stitch(Mat img_0, Mat img_1) {
 
-    int num_images = 2;
+    const int num_images = 2;
     vector<Mat> imagesList;
     imagesList.push_back(img_0);
     imagesList.push_back(img_1);
@@ -638,10 +645,20 @@ Mat image_stitch(Mat img_0, Mat img_1) {
     vector<UMat> masks(num_images);
 
     // Prepare images masks
+    std::thread new_thread[num_images];
     for (int i = 0; i < num_images; ++i)
     {
         masks[i].create(images[i].size(), CV_8U);
         masks[i].setTo(Scalar::all(255));
+        //new_thread[i] = std::thread(create_masks_thread, &masks, &images, i);
+    }
+
+    for (int i = 0; i < num_images; ++i)
+    {
+        if (new_thread[i].joinable())
+        {
+            new_thread[i].join();
+        }
     }
 
     // Warp images and their masks

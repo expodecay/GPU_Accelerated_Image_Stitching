@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.20)
 
 project(image_stitching)
 
+SET(CMAKE_CXX_STANDARD 17)
+SET(CMAKE_C_STANDARD 11)
+
 add_definitions(-D CMAKE_CXX_FLAGS="/O3")
 
 find_package(OpenCV REQUIRED PATHS "C:/opencvBuild/build/install")
