@@ -7,6 +7,7 @@
 
 #include "opencv2/opencv_modules.hpp"
 #include <opencv2/core/utility.hpp>
+#include <opencv2/cudawarping.hpp>
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/stitching/detail/autocalib.hpp"
