@@ -4,7 +4,7 @@
 
 #include "MyBlend.h"
 
-#define USE_CUDA_FOR_PROJECT false
+#define USE_CUDA_FOR_PROJECT true
 
 #if USE_CUDA_FOR_PROJECT
 #define HAVE_CUDA

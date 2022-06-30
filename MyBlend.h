@@ -7,6 +7,10 @@
 
 #include "opencv2/opencv_modules.hpp"
 #include <opencv2/core/utility.hpp>
+#include <opencv2/cudaarithm.hpp>
+#include <opencv2/cudaimgproc.hpp>
+#include <opencv2/cudacodec.hpp>
+#include <opencv2/cudafilters.hpp>
 #include <opencv2/cudawarping.hpp>
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
