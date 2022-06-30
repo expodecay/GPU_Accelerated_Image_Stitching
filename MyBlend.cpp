@@ -32,6 +32,23 @@ namespace {
     static const float WEIGHT_EPS = 1e-5f;
 }
 
+MyBlend::MyBlend(int try_gpu, int num_bands, int weight_type)
+{
+    num_bands_ = 0;
+    setNumBands(num_bands);
+
+#if defined(HAVE_CUDA) && defined(HAVE_OPENCV_CUDAARITHM) && defined(HAVE_OPENCV_CUDAWARPING)
+    can_use_gpu_ = try_gpu && cv::cuda::getCudaEnabledDeviceCount();
+    gpu_feed_idx_ = 0;
+#else
+    CV_UNUSED(try_gpu);
+    can_use_gpu_ = false;
+#endif
+
+    CV_Assert(weight_type == CV_32F || weight_type == CV_16S);
+    weight_type_ = weight_type;
+}
+
 void MyBlend::prepare(cv::Rect dst_roi)
 {
     dst_roi_final_ = dst_roi;

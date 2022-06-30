@@ -28,7 +28,7 @@
 
 class MyBlend : public cv::detail::Blender{
 public:
-    CV_WRAP MyBlend(int try_gpu = false, int num_bands = 5, int weight_type = CV_32F){}
+    CV_WRAP MyBlend(int try_gpu = false, int num_bands = 5, int weight_type = CV_32F);
 
     CV_WRAP int numBands() const { return actual_num_bands_; }
     CV_WRAP void setNumBands(int val) { actual_num_bands_ = val; }

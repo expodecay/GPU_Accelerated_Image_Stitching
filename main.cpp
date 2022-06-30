@@ -990,8 +990,8 @@ Mat image_stitch(Mat img_0, Mat img_1) {
         {
             cout << "######Try_CUDA\n";
             cout << "blender = Blender::createDefault(blend_type, try_cuda);\n";
-            blender = Blender::createDefault(blend_type, try_cuda);
-            //blender = cv::makePtr<MyBlend>(try_cuda);
+            //blender = Blender::createDefault(blend_type, try_cuda);
+            blender = cv::makePtr<MyBlend>(try_cuda);
             Size dst_sz = resultRoi(corners, sizes).size();
             float blend_width = sqrt(static_cast<float>(dst_sz.area())) * blend_strength / 100.f;
             if (blend_width < 1.0f)
@@ -1004,7 +1004,8 @@ Mat image_stitch(Mat img_0, Mat img_1) {
 
             else if (blend_type == Blender::MULTI_BAND)
             {
-                MultiBandBlender* mb = dynamic_cast<MultiBandBlender*>(blender.get());
+                //MultiBandBlender* mb = dynamic_cast<MultiBandBlender*>(blender.get());
+                MyBlend* mb = dynamic_cast<MyBlend*>(blender.get());
                 mb->setNumBands(static_cast<int>(ceil(log(blend_width) / log(2.)) - 1.));
                 LOGLN("Multi-band blender, number of bands: " << mb->numBands());
             }
