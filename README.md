@@ -3,7 +3,7 @@
 ## CLion Setup
 -CLion version 2022.1.3
 
-After cloning the repo, you should be presented with an 'Open Project Wizard'. Select '+' to 
+After cloning the repo, open the folder as a CLion project. You should be presented with an 'Open Project Wizard'. Select '+' to 
 add a new release profile. From the dropdown menus select:
 * Toolchain
   * Visual Studio
