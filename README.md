@@ -42,7 +42,11 @@ directory. To run the executable, enter the following:
 
 <pre>C:\opencvBuild\build\install\setup_vars_opencv4.cmd .\image_stitching.exe --try_cuda yes --expos_comp no --warp plane --wave_correct no  --features surf --match_conf 0.3 ..\..\images\4k\img_0.jpg ..\..\images\4k\img_1.jpg ..\..\images\4k\img_2.jpg ..\..\images\4k\img_3.jpg ..\..\images\4k\img_4.jpg ..\..\images\4k\img_5.jpg ..\..\images\4k\img_6.jpg ..\..\images\4k\img_7.jpg ..\..\images\4k\img_8.jpg ..\..\images\4k\img_9.jpg</pre>
 
-**NOTE**: The use of C:\opencvBuild\build\install\setup_vars_opencv4.cmd before running the program. Excluding this might cause the ..\..\..\..\
+**NOTE**: The use of 
+
+_C:\opencvBuild\build\install\setup_vars_opencv4.cmd_
+
+before running the program. Excluding this might cause the 
 program to execute with no output. 
 
 ![CLion Settings](Readme/input.PNG)
