@@ -40,7 +40,7 @@ icon to the left (or enter CRTL + F9) to build the project
 At the bottom of the IDE, open the terminal tab and navigate the release folder under the 'cmake-build-release-visual-studio'
 directory. To run the executable, enter the following:
 
-C:\opencvBuild\build\install\setup_vars_opencv4.cmd .\image_stitching.exe --try_cuda yes --expos_comp no --warp plane --wave_correct no  --features surf --match_conf 0.3 ..\..\images\4k\img_0.jpg ..\..\images\4k\img_1.jpg ..\..\images\4k\img_2.jpg ..\..\images\4k\img_3.jpg ..\..\images\4k\img_4.jpg ..\..\images\4k\img_5.jpg ..\..\images\4k\img_6.jpg ..\..\images\4k\img_7.jpg ..\..\images\4k\img_8.jpg ..\..\images\4k\img_9.jpg_
+C:\opencvBuild\build\install\setup_vars_opencv4.cmd .\image_stitching.exe --try_cuda yes --expos_comp no --warp plane --wave_correct no  --features surf --match_conf 0.3 ..\..\images\4k\img_0.jpg ..\..\images\4k\img_1.jpg ..\..\images\4k\img_2.jpg ..\..\images\4k\img_3.jpg ..\..\images\4k\img_4.jpg ..\..\images\4k\img_5.jpg ..\..\images\4k\img_6.jpg ..\..\images\4k\img_7.jpg ..\..\images\4k\img_8.jpg ..\..\images\4k\img_9.jpg
 
 **Note: The use of C:\opencvBuild\build\install\setup_vars_opencv4.cmd before running the program. Excluding this might cause the ..\..\..\..\
 program to execute with no output. 
