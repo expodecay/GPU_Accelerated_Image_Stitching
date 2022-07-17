@@ -22,8 +22,11 @@ following error:
 ![CLion Settings](Readme/cmake_error.PNG)
 
 To address this, open CMakeLists.txt from the project panel to the left and update find_package() with the 
-location of your OpenCV installation folder. ex: "C:/opencvBuild/build/install". Delete or comment out the remaining
-find_package() options and select 'Reload changes' on the top right of the text editor. 
+location of your OpenCV installation folder. 
+
+ex: _"C:/opencvBuild/build/install"_
+
+Delete or comment out the remaining find_package() options and select 'Reload changes' on the top right of the text editor. 
 
 ![CLion Settings](Readme/cmake_alterations.PNG)
 
