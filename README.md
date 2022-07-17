@@ -10,7 +10,8 @@ add a new release profile. From the dropdown menus select:
 * Generator
   * Visual Studio 16 2019
   
-'-G "Visual Studio 16 2019"' should populate in the CMake options box. 
+'-G "Visual Studio 16 2019"' should populate in the CMake options box.
+
 ![CLion Settings](Readme/Open Project Wizard.PNG)
 
 After selecting 'OK', CMake should start compiling CMakeLists.txt. You might be presented with the 
